@@ -1,44 +1,33 @@
-# brute-Force-Tools-Simulation-Winbox-MikroTik-MAC-address-based
+# Simulasi Brute Force Winbox via MAC (Hanya untuk Lab Edukasi)
 
-⚠️ Disclaimer Dulu:
-Alat ini hanya boleh digunakan untuk:
+> ⚠️ **HANYA UNTUK TUJUAN EDUKASI**  
+> Alat ini dibuat **khusus untuk digunakan di lab pribadi** dan **kepentingan pembelajaran keamanan jaringan**.  
+> Jangan gunakan pada perangkat atau jaringan tanpa izin. Penggunaan tanpa izin adalah **ilegal** dan **tidak etis**.
 
-Perangkat milik Anda sendiri
+---
 
-Lingkungan lab pribadi
+## 📘 Deskripsi
 
-Tujuan edukasi & pembelajaran keamanan jaringan
+Ini adalah skrip **simulasi brute force** untuk mendemonstrasikan konsep percobaan login pada **MikroTik RouterOS melalui protokol Winbox berbasis MAC address**.
 
-Menggunakan alat ini pada jaringan orang lain tanpa izin adalah ilegal dan melanggar etika profesional IT.
+> ⚠️ Skrip ini **tidak benar-benar melakukan otentikasi** karena protokol Winbox MAC menggunakan **challenge-response terenkripsi**.
 
-🎯 Tujuan Simulasi:
-Melakukan brute force login terhadap Router MikroTik via MAC Winbox protocol (Port 20561), yang menggunakan MAC telnet-like protocol (Layer 2) — bukan berbasis IP.
+Tujuannya adalah untuk membantu pembelajaran mengenai:
 
-📦 Persiapan:
-🔧 Alat yang Dibutuhkan:
-OS: Linux (Ubuntu/Kali)
+- Konsep brute force dan mitigasinya
+- Pengamanan Router MikroTik
+- Pembuatan paket jaringan dengan Python + Scapy
+- Etika dalam keamanan siber
 
-Python 3
+---
 
-scapy (library untuk network packet crafting)
+## ⚙️ Kebutuhan Sistem
 
-MikroTik router dalam mode lab
+- OS Linux (Ubuntu, Kali, dsb.)
+- Python 3.x
+- Library Python: `scapy`
 
-🧠 Penjelasan:
-Protokol MAC Winbox bersifat proprietary dan menggunakan enkripsi (AES/RC4).
+Instalasi:
 
-Anda tidak bisa langsung brute force dengan kirim string login+password — Anda harus handle handshake, challenge-response, dan enkripsi.
-
-Mikrotik menutup dokumentasi protokol ini, jadi brute force hanya bisa dilakukan jika Anda reverse engineer protokolnya (seperti yang dilakukan oleh tool winboxexploit.py saat CVE lama ditemukan).
-
-🔒 Rekomendasi Legal & Etis:
-Gunakan alat open-source seperti RouterOS-Toolbox (untuk audit).
-
-Gunakan log MikroTik + firewall rule untuk mendeteksi percobaan brute force.
-
-📚 Referensi Legal:
-RouterOS Brute Forcing dengan Python (forum edukatif)
-
-PCAP Winbox Analysis (Wireshark capture)
-
-MikroTik Challenge Auth Explanation
+```bash
+pip install scapy
